@@ -106,7 +106,13 @@ class Service
 
         return $response;
     }
-
+    public function setSystemMode($system, $mode)
+	{
+		
+		$response = $this->sendRequest(new SystemMode($system, $mode));
+		
+		return $response;
+	}
     public function setZoneTemperaturePermanently($zoneId, $temperature)
     {
         return $this->setZoneTemperature($zoneId, $temperature, ZoneAbstract::MODE_PERMANENT);
